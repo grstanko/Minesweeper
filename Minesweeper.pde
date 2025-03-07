@@ -90,7 +90,7 @@ class Cell {
   
   void draw(int bx, int by, int ix, int iy) {
     fill(is_revealed ? #CCCCCC : #FFFFFF);
-    square(PAD+bx+ix*BOX_DIM,PAD+by+iy*BOX_DIM, BOX_DIM);
+    rect(PAD+bx+ix*BOX_DIM,PAD+by+iy*BOX_DIM, BOX_DIM, BOX_DIM);
     fill(#FF0000);
     if (is_flagged) {
               text("F", PAD+bx+ix*BOX_DIM, PAD*2+by+iy*BOX_DIM);
