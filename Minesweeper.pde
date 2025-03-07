@@ -72,7 +72,6 @@ Difficulty d;
 Cell[][] cells;
 
 void draw() {
-  System.out.println(width + " " + height);
   background(#999999);
   fill(#00FF00);
   text(flags + " / " + d.bomb_count(), 10, 10);
@@ -156,7 +155,8 @@ class Cell {
 }
 
 void end_game() {
-  System.out.println("You failed");
+  text("You lost", 0, 0);
+  noLoop();
 }
  
 interface Difficulty {
@@ -180,7 +180,6 @@ void mouseReleased() {
   } else if (mouseButton ==RIGHT) {
     cells[y][x].is_flagged = !cells[y][x].is_flagged;
     flags += cells[y][x].is_flagged ? 1 : 0;
-    System.out.println("Flagged " + x + y);
   } else if (mouseButton == CENTER) {
     if (cells[y][x].all_flagged())
       cells[y][x].reveal_around();
