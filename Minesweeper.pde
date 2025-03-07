@@ -6,9 +6,8 @@ void setup() {
 }
 int flags;
 void setup_board() {
-  cells = new Cell[d.height()][];
+  cells = new Cell[d.height()][d.width()];
   for (int iy = 0; iy < cells.length; iy++) {
-    cells[iy] = new Cell[d.width()];
     for (int ix = 0; ix < cells.length; ix++) {
       cells[iy][ix] = new Cell();
     }
