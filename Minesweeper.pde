@@ -1,6 +1,6 @@
 
 void setup() {
-  size(0, 0);
+  size(1020, 1020);
   d = new Easy();
   setup_board();
 }
@@ -72,7 +72,7 @@ Difficulty d;
 Cell[][] cells;
 
 void draw() {
-  windowResize(d.width()*BOX_DIM+(PAD*2), d.height()*BOX_DIM+(PAD*2));
+  System.out.println(width + " " + height);
   background(#999999);
   fill(#00FF00);
   text(flags + " / " + d.bomb_count(), 10, 10);
