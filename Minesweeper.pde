@@ -175,7 +175,6 @@ void mouseReleased() {
   int y = (mouseY-PAD)/BOX_DIM;
   if (x < 0 || x > 99) return;
   if (y < 0 || y > 99) return;
-  System.out.println("2");
   if (mouseButton == LEFT) {
     cells[y][x].reveal();
   } else if (mouseButton ==RIGHT) {
