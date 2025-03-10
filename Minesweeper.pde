@@ -1,20 +1,18 @@
 
 void setup() {
   size(1020, 1020);
-  d = new Easy();
   setup_board();
 }
 int flags;
 void setup_board() {
-  cells = new Cell[d.height()][d.width()];
   for (int iy = 0; iy < cells.length; iy++) {
     for (int ix = 0; ix < cells.length; ix++) {
       cells[iy][ix] = new Cell();
     }
   }
-  for (int i = 0; i < d.bomb_count(); i++) {
-    int x = (int)(Math.random()*d.width());
-    int y = (int)(Math.random()*d.height());
+  for (int i = 0; i < 750; i++) {
+    int x = (int)(Math.random()*100);
+    int y = (int)(Math.random()*100);
     if (cells[y][x].is_bomb) { i--; continue; }
     else cells[y][x].is_bomb = true;
   }
@@ -67,14 +65,14 @@ void setup_board() {
 final int BOX_DIM = 10;
 final int PAD = 10;
 
-Difficulty d;
 
-Cell[][] cells;
+Cell[][] 
+  cells = new Cell[100][100];
 
 void draw() {
   background(#999999);
   fill(#00FF00);
-  text(flags + " / " + d.bomb_count(), 10, 10);
+  text(flags + " / " + 750, 10, 10);
   cells[0][0].draw(0, 0, 0, 0);
 }
 
@@ -177,6 +175,7 @@ void mouseReleased() {
   int y = (mouseY-PAD)/BOX_DIM;
   if (x < 0 || x > 99) return;
   if (y < 0 || y > 99) return;
+  System.out.println("2");
   if (mouseButton == LEFT) {
     cells[y][x].reveal();
   } else if (mouseButton ==RIGHT) {
