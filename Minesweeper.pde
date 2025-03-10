@@ -1,4 +1,4 @@
-
+int fc;
 void setup() {
   size(1020, 1020);
   setup_board();
@@ -171,6 +171,7 @@ class Easy implements Difficulty {
   void display() {}
 }
 void mouseReleased() {
+  if (frameCount < 10) return;
   int x = (mouseX-PAD)/BOX_DIM;
   int y = (mouseY-PAD)/BOX_DIM;
   if (x < 0 || x > 99) return;
